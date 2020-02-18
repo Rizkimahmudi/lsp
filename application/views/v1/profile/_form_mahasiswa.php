@@ -1,5 +1,14 @@
 <form class="form-horizontal" method="POST">
 	<div class="form-group">
+		<label for="form-tempat_lahir" class="col-md-4 control-label">NIK</label>
+		<div class="col-md-8">
+			<input type="text" class="form-control" name="NIK" value="<?=$peserta['NIK']?>" placeholder="NIK" <?=$edit ? '' : 'readonly' ?> />
+		</div>
+		<?php if (form_error('NIK') != '') {?>
+			<small class="help-block"><i class="fa fa-times-circle-o"></i> <?php echo form_error('NIK')?></small>
+		<?php }?>
+	</div>
+	<div class="form-group">
 		<label for="form-tempat_lahir" class="col-md-4 control-label">Tempat Lahir</label>
 		<div class="col-md-8">
 			<input type="text" class="form-control" name="tempat_lahir" value="<?=$peserta['tempat_lahir']?>" placeholder="Tempat Lahir" <?=$edit ? '' : 'readonly' ?> />
