@@ -12,6 +12,13 @@
 			    	<small class="help-block"><i class="fa fa-times-circle-o"></i> <?php echo form_error('NRP')?></small>
 			    <?php }?>
 		    </div>
+		    <div class="form-group <?php echo (form_error('NIK') != '') ? 'has-error' : '' ; ?>">
+		      	<label for="form-nik" class="control-label">NIK</label>
+		      	<input type="text" name="NIK" class="form-control" id="form-nik" <?=(@$mahasiswa['NIK'] !='' ? 'readonly' : '')?> placeholder="NIK" value="<?php echo @$mahasiswa['NIK']?>">
+			    <?php if (form_error('NIK') != '') {?>
+			    	<small class="help-block"><i class="fa fa-times-circle-o"></i> <?php echo form_error('NIK')?></small>
+			    <?php }?>
+		    </div>
 			<div class="form-group <?php echo (form_error('nm_mahasiswa') != '') ? 'has-error' : '' ; ?>">
 		      	<label for="form-name" class="control-label">Nama</label>
 		      	<input type="text" name="nm_mahasiswa" class="form-control" id="form-name" placeholder="Name" value="<?php echo @$mahasiswa['nm_mahasiswa']?>">

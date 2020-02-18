@@ -42,6 +42,7 @@ class MasterController extends MY_HomeController {
 		}
 		
 		if (isPost()){
+			$this->form_validation->set_rules('NIK', 'NIK', 'required');
 			$this->form_validation->set_rules('nm_mahasiswa', 'Nama', 'required');
 			$this->form_validation->set_rules('alamat_mhs', 'Alamat', 'required');
 			$this->form_validation->set_rules('kodepos', 'Kodepos', 'required|numeric|trim');
@@ -70,7 +71,8 @@ class MasterController extends MY_HomeController {
 					
 					// $password = post('password', 'password');
 					$password = post('password') != '' ? post('password') : 'password';
-				}					
+				}
+				$_mhs->NIK				= $this->input->post('NIK');					
 				$_mhs->nm_mahasiswa 	= $this->input->post('nm_mahasiswa');
 				$_mhs->alamat_mhs 		= $this->input->post('alamat_mhs');
 				$_mhs->kodepos 			= $this->input->post('kodepos');
@@ -1086,7 +1088,8 @@ class MasterController extends MY_HomeController {
 						$flash = 'Hapus '.post('tipe').' dengan nama <strong>"'.$nama.'"</strong>';
 						
 						echo json_encode($this->_modal_kompetensi($id, $flash));
-					}
+					}
+
 				break;
 				case 'add-detail-kompetensi' :
 					$id = $this->input->post('id');
