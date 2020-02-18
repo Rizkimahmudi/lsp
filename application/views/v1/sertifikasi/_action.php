@@ -1,0 +1,1 @@
+<input type="checkbox" class="kompeten-sertifikasi" <?=($sertifikasi['status'] == 4 ? 'checked' : '')?> value="kompeten" data-id="<?=$sertifikasi['id_pendaftaran']?>">
